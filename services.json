@@ -1,0 +1,22 @@
+{
+    "workspaces": [
+        {
+            "id": "95d63c01-1f26-4154-929f-64f22ac43a72",
+            "name": "FinanceHub",
+            "services": [
+                {
+                    "id": "3479bc38-25ff-4018-9b7b-c74b68967abc",
+                    "name": "Frontend y Backend",
+                    "pre_command": "npm run build",
+                    "command": "npm run preview -- --host --port 8080",
+                    "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\Projects\\budget-beam-craft",
+                    "shell": "pwsh",
+                    "shell_native": false,
+                    "auto_restart": false,
+                    "restart_delay": 2,
+                    "env": {}
+                }
+            ]
+        }
+    ]
+}
