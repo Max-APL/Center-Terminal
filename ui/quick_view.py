@@ -656,15 +656,36 @@ class FreeQuickView(ctk.CTkFrame):
                     pass
                 delattr(self, "placeholder_card")
                 
-            self.placeholder_card = ctk.CTkFrame(self.main_area, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
-            self.placeholder_card.pack(fill="both", expand=True)
+            self.main_area.pack_forget()
+            
+            self.placeholder_card = ctk.CTkFrame(self, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
+            self.placeholder_card.pack(fill="both", expand=True, padx=15, pady=(0, 15))
+            
+            empty_container = ctk.CTkFrame(self.placeholder_card, fg_color="transparent")
+            empty_container.pack(expand=True)
+            
+            icon_lbl = ctk.CTkLabel(
+                empty_container,
+                text="🐚",
+                font=ctk.CTkFont(size=48)
+            )
+            icon_lbl.pack(pady=(0, 10))
+            
+            title_lbl = ctk.CTkLabel(
+                empty_container,
+                text="Sandbox Libre de Terminales",
+                font=ctk.CTkFont(size=16, weight="bold"),
+                text_color="white"
+            )
+            title_lbl.pack(pady=(0, 5))
             
             placeholder_lbl = ctk.CTkLabel(
-                self.placeholder_card, 
-                text="No hay terminales libres activas.\n\nSelecciona el intérprete arriba y haz clic en '+ Nueva Terminal' para empezar.", 
-                font=FONT_SUBTITLE, text_color=COLOR_MUTED
+                empty_container, 
+                text="No hay terminales libres activas.\nSelecciona el intérprete arriba y haz clic en '+ Nueva Terminal' para empezar.", 
+                font=FONT_MUTED, text_color=COLOR_MUTED,
+                justify="center"
             )
-            placeholder_lbl.pack(expand=True)
+            placeholder_lbl.pack()
             self.btn_clear_all.configure(state="disabled")
             return
             
@@ -676,6 +697,7 @@ class FreeQuickView(ctk.CTkFrame):
                 pass
             delattr(self, "placeholder_card")
             
+        self.main_area.pack(fill="both", expand=True, padx=15, pady=(0, 15))
         self.btn_clear_all.configure(state="normal")
         
         num_terminals = len(self.terminals)

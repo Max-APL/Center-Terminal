@@ -1,0 +1,136 @@
+[2026-06-06 22:54:10] --- Contexto de ejecucion ---
+[2026-06-06 22:54:10] Modo: terminal capturada interna
+[2026-06-06 22:54:10] Shell: Command Prompt (CMD)
+[2026-06-06 22:54:10] Ejecutable: C:\WINDOWS\system32\cmd.exe
+[2026-06-06 22:54:10] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-06 22:54:10] No se esperaba --- en este momento.
+
+[2026-06-06 22:54:10] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 22:54:21] --- Contexto de ejecucion ---
+[2026-06-06 22:54:21] Modo: terminal capturada interna
+[2026-06-06 22:54:21] Shell: Command Prompt (CMD)
+[2026-06-06 22:54:21] Ejecutable: C:\WINDOWS\system32\cmd.exe
+[2026-06-06 22:54:21] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-06 22:54:21] No se esperaba --- en este momento.
+
+[2026-06-06 22:54:21] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 22:55:42] --- Contexto de ejecucion ---
+[2026-06-06 22:55:42] Modo: terminal capturada interna
+[2026-06-06 22:55:42] Shell: PowerShell 7 (pwsh)
+[2026-06-06 22:55:42] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 22:55:42] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-06 22:55:42] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-06 22:55:43] > Frontend_PastenPlast@0.0.0 build
+[2026-06-06 22:55:43] > vite build
+
+[2026-06-06 22:55:43] vite v5.4.21 building for production...
+[2026-06-06 22:55:43] transforming...
+[2026-06-06 22:55:43] ✓ 3 modules transformed.
+[2026-06-06 22:55:43] x Build failed in 79ms
+[2026-06-06 22:55:43] error during build:
+[2026-06-06 22:55:43] [vite]: Rollup failed to resolve import "@/plugins" from "C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/src/main.js".
+[2026-06-06 22:55:43] This is most likely unintended because it can break your application at runtime.
+[2026-06-06 22:55:43] If you do want to externalize this module explicitly add it to
+[2026-06-06 22:55:43] `build.rollupOptions.external`
+[2026-06-06 22:55:43]     at viteWarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+[2026-06-06 22:55:43]     at onRollupWarning (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65887:5)
+[2026-06-06 22:55:43]     at onwarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+[2026-06-06 22:55:43]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:20995:13
+[2026-06-06 22:55:43]     at Object.logger [as onLog] (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
+[2026-06-06 22:55:43]     at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
+[2026-06-06 22:55:43]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
+
+[2026-06-06 22:55:43] --- [FALLO] El pre-comando termino con error (Codigo: 1) ---
+
+[2026-06-06 22:55:44] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 22:59:14] --- Contexto de ejecucion ---
+[2026-06-06 22:59:14] Modo: terminal capturada interna
+[2026-06-06 22:59:14] Shell: PowerShell 7 (pwsh)
+[2026-06-06 22:59:14] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 22:59:14] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-06 22:59:15] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-06 22:59:15] > Frontend_PastenPlast@0.0.0 build
+[2026-06-06 22:59:15] > vite build
+
+[2026-06-06 22:59:16] vite v5.4.21 building for production...
+[2026-06-06 22:59:16] transforming...
+[2026-06-06 22:59:16] ✓ 3 modules transformed.
+[2026-06-06 22:59:16] x Build failed in 79ms
+[2026-06-06 22:59:16] error during build:
+[2026-06-06 22:59:16] [vite]: Rollup failed to resolve import "@/plugins" from "C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/src/main.js".
+[2026-06-06 22:59:16] This is most likely unintended because it can break your application at runtime.
+[2026-06-06 22:59:16] If you do want to externalize this module explicitly add it to
+[2026-06-06 22:59:16] `build.rollupOptions.external`
+[2026-06-06 22:59:16]     at viteWarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+[2026-06-06 22:59:16]     at onRollupWarning (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65887:5)
+[2026-06-06 22:59:16]     at onwarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+[2026-06-06 22:59:16]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:20995:13
+[2026-06-06 22:59:16]     at Object.logger [as onLog] (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
+[2026-06-06 22:59:16]     at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
+[2026-06-06 22:59:16]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
+
+[2026-06-06 22:59:16] --- [FALLO] El pre-comando termino con error (Codigo: 1) ---
+
+[2026-06-06 22:59:16] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 23:24:58] --- Contexto de ejecucion ---
+[2026-06-06 23:24:58] Modo: terminal capturada interna
+[2026-06-06 23:24:58] Shell: PowerShell 7 (pwsh)
+[2026-06-06 23:24:58] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 23:24:58] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-06 23:24:58] --- Diagnostico del entorno ---
+[2026-06-06 23:24:58] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+[2026-06-06 23:24:58] PowerShell: 7.6.2
+[2026-06-06 23:24:58] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:24:58] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:24:58] Node version: v24.12.0
+[2026-06-06 23:24:59] NPM version: 11.6.2
+
+[2026-06-06 23:24:59] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-06 23:24:59] > Frontend_PastenPlast@0.0.0 build
+[2026-06-06 23:24:59] > vite build
+
+[2026-06-06 23:25:00] vite v5.4.21 building for production...
+[2026-06-06 23:25:00] transforming...
+[2026-06-06 23:25:12] ✓ 1157 modules transformed.
+[2026-06-06 23:25:13] rendering chunks...
+[2026-06-06 23:25:14] computing gzip size...
+[2026-06-06 23:25:14] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-06 23:25:14] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-06 23:25:14] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-06 23:25:14] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-06 23:25:14] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-06 23:25:14] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-06 23:25:14] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-06 23:25:14] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-06 23:25:14] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-06 23:25:14] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-06 23:25:14] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-06 23:25:14] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-06 23:25:14] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-06 23:25:14] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-06 23:25:14] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-06 23:25:14] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-06 23:25:14] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-06 23:25:14] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-06 23:25:14] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-06 23:25:14] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-06 23:25:14] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-06 23:25:14] - Using dynamic import() to code-split the application
+[2026-06-06 23:25:14] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-06 23:25:14] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-06 23:25:14] ✓ built in 13.97s
+
+[2026-06-06 23:25:14] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-06 23:25:15]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-06 23:38:04] --- Servicio detenido por el usuario ---

@@ -17,6 +17,36 @@
                     "env": {}
                 }
             ]
+        },
+        {
+            "id": "ad241d85-c819-4bef-87e7-e3f67bfc2f36",
+            "name": "Pastenplast",
+            "services": [
+                {
+                    "id": "6c40e463-4458-4eb3-bf86-f6d01164541b",
+                    "name": "Front",
+                    "pre_command": "npm run build",
+                    "command": "serve -s dist -l 8080",
+                    "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\PastenPlast\\Inventario-PastenPlast\\frontend_pastenplast",
+                    "shell": "pwsh",
+                    "shell_native": false,
+                    "auto_restart": false,
+                    "restart_delay": 2,
+                    "env": {}
+                },
+                {
+                    "id": "28a838ba-a6fd-4bf0-ab5e-854b55e91159",
+                    "name": "back",
+                    "pre_command": ".\\.venv\\Scripts\\Activate.ps1",
+                    "command": "uvicorn app.main:app --host 0.0.0.0 --port 8000",
+                    "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\PastenPlast\\Inventario-PastenPlast\\backend_pastenplast",
+                    "shell": "pwsh",
+                    "shell_native": false,
+                    "auto_restart": false,
+                    "restart_delay": 2,
+                    "env": {}
+                }
+            ]
         }
     ]
 }

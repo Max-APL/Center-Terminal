@@ -81,12 +81,22 @@ class AuditView(ctk.CTkFrame):
         self.placeholder_frame = ctk.CTkFrame(self.right_viewer, fg_color="transparent")
         self.placeholder_frame.pack(fill="both", expand=True)
         
+        empty_container = ctk.CTkFrame(self.placeholder_frame, fg_color="transparent")
+        empty_container.pack(expand=True)
+        
+        icon_lbl = ctk.CTkLabel(empty_container, text="📜", font=ctk.CTkFont(size=48))
+        icon_lbl.pack(pady=(0, 10))
+        
+        title_lbl = ctk.CTkLabel(empty_container, text="Historial de Auditoría de Logs", font=ctk.CTkFont(size=16, weight="bold"), text_color="white")
+        title_lbl.pack(pady=(0, 5))
+        
         placeholder_lbl = ctk.CTkLabel(
-            self.placeholder_frame, 
-            text="Selecciona un servicio a la izquierda\npara ver su historial de auditoría de logs.", 
-            font=FONT_SUBTITLE, text_color=COLOR_MUTED
+            empty_container, 
+            text="Selecciona un servicio a la izquierda para explorar su historial de logs registrado.", 
+            font=FONT_MUTED, text_color=COLOR_MUTED,
+            justify="center"
         )
-        placeholder_lbl.pack(expand=True)
+        placeholder_lbl.pack()
         
         # Elementos de logs (ocultos inicialmente)
         self.viewer_content = ctk.CTkFrame(self.right_viewer, fg_color="transparent")
@@ -140,8 +150,8 @@ class AuditView(ctk.CTkFrame):
         services = self.manager.services
         
         if not services:
-            no_svc_lbl = ctk.CTkLabel(self.services_scroll, text="No hay servicios", font=FONT_MUTED, text_color=COLOR_MUTED)
-            no_svc_lbl.pack(pady=20)
+            no_svc_lbl = ctk.CTkLabel(self.services_scroll, text="No hay servicios registrados", font=FONT_MUTED, text_color=COLOR_MUTED, justify="center")
+            no_svc_lbl.pack(pady=40, padx=10)
             self.service_buttons["_empty"] = no_svc_lbl
             self.show_placeholder()
             return
@@ -189,7 +199,8 @@ class AuditView(ctk.CTkFrame):
     def get_log_file_path(self, service):
         if not service:
             return None
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        from config import get_base_dir
+        base_dir = get_base_dir()
         logs_dir = os.path.join(base_dir, "logs")
         
         sanitized_name = "".join(c for c in service.name if c.isalnum() or c in (' ', '_', '-')).strip()
@@ -244,7 +255,8 @@ class AuditView(ctk.CTkFrame):
             
     def open_logs_folder(self):
         try:
-            base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            from config import get_base_dir
+            base_dir = get_base_dir()
             logs_dir = os.path.join(base_dir, "logs")
             os.makedirs(logs_dir, exist_ok=True)
             

@@ -66,10 +66,10 @@ class DashboardView(ctk.CTkFrame):
         self.metrics_frame.pack(fill="x", pady=(0, 20))
         self.metrics_frame.grid_columnconfigure((0, 1, 2, 3), weight=1, uniform="equal")
 
-        self.card_total = self.create_metric_card(self.metrics_frame, "Servicios Registrados", "0", 0)
-        self.card_active = self.create_metric_card(self.metrics_frame, "En Ejecución", "0", 1, color=COLOR_SUCCESS, has_progress=True, progress_color=COLOR_SUCCESS)
-        self.card_cpu = self.create_metric_card(self.metrics_frame, "Consumo CPU", "0.0%", 2, has_progress=True, progress_color=COLOR_PRIMARY)
-        self.card_mem = self.create_metric_card(self.metrics_frame, "Consumo Memoria", "0 MB", 3, has_progress=True, progress_color="white")
+        self.card_total = self.create_metric_card(self.metrics_frame, "📦  Servicios Registrados", "0", 0)
+        self.card_active = self.create_metric_card(self.metrics_frame, "⚡  En Ejecución", "0", 1, color=COLOR_SUCCESS, has_progress=True, progress_color=COLOR_SUCCESS)
+        self.card_cpu = self.create_metric_card(self.metrics_frame, "🖥️  Consumo CPU", "0.0%", 2, has_progress=True, progress_color=COLOR_PRIMARY)
+        self.card_mem = self.create_metric_card(self.metrics_frame, "💾  Consumo Memoria", "0 MB", 3, has_progress=True, progress_color="white")
 
         # 3. Gráficos y Resumen
         self.charts_frame = ctk.CTkFrame(self.scroll_container, fg_color="transparent")
@@ -137,11 +137,19 @@ class DashboardView(ctk.CTkFrame):
         filtered_services = {k: v for k, v in services.items() if selected_ws_id is None or v.workspace_id == selected_ws_id}
 
         if not filtered_services:
-            no_services_frame = ctk.CTkFrame(self.services_container, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, height=110, corner_radius=12)
+            no_services_frame = ctk.CTkFrame(self.services_container, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, height=120, corner_radius=12)
             no_services_frame.pack(fill="x", pady=5)
             no_services_frame.pack_propagate(False)
-            lbl = ctk.CTkLabel(no_services_frame, text="No hay servicios para mostrar en esta vista.", font=FONT_BODY, text_color=COLOR_MUTED)
-            lbl.pack(expand=True)
+            
+            empty_container = ctk.CTkFrame(no_services_frame, fg_color="transparent")
+            empty_container.pack(expand=True)
+            
+            icon_lbl = ctk.CTkLabel(empty_container, text="⚡", font=ctk.CTkFont(size=24))
+            icon_lbl.pack(pady=(0, 5))
+            
+            lbl = ctk.CTkLabel(empty_container, text="No hay servicios para mostrar en esta vista.", font=FONT_BODY, text_color=COLOR_MUTED)
+            lbl.pack()
+            
             self.cards["_empty"] = {"frame": no_services_frame}
             return
 

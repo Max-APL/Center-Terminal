@@ -1,0 +1,22 @@
+{
+    "workspaces": [
+        {
+            "id": "c735937a-d316-4e8a-91e7-747653ce8f9d",
+            "name": "PastenPlast",
+            "services": [
+                {
+                    "id": "ae539c0b-7486-4d84-b813-3790ca494d83",
+                    "name": "Frontend Principal",
+                    "pre_command": "npm run build",
+                    "command": "serve -s dist -l 8080",
+                    "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\PastenPlast\\Inventario-PastenPlast\\frontend_pastenplast",
+                    "shell": "pwsh",
+                    "shell_native": false,
+                    "auto_restart": false,
+                    "restart_delay": 2,
+                    "env": {}
+                }
+            ]
+        }
+    ]
+}

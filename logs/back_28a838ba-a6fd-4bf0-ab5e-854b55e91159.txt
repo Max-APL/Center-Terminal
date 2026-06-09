@@ -1,0 +1,58 @@
+[2026-06-06 23:33:11] --- Contexto de ejecucion ---
+[2026-06-06 23:33:11] Modo: terminal capturada interna
+[2026-06-06 23:33:11] Shell: PowerShell 7 (pwsh)
+[2026-06-06 23:33:11] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 23:33:11] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-06 23:33:11] --- Diagnostico del entorno ---
+[2026-06-06 23:33:11] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+[2026-06-06 23:33:11] PowerShell: 7.6.2
+[2026-06-06 23:33:11] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:33:11] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:33:11] Node version: v24.12.0
+[2026-06-06 23:33:12] NPM version: 11.6.2
+
+[2026-06-06 23:33:12] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-06 23:33:12] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+
+[2026-06-06 23:33:12] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 23:38:15] --- Contexto de ejecucion ---
+[2026-06-06 23:38:15] Modo: terminal capturada interna
+[2026-06-06 23:38:15] Shell: PowerShell 7 (pwsh)
+[2026-06-06 23:38:15] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 23:38:15] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-06 23:38:16] --- Diagnostico del entorno ---
+[2026-06-06 23:38:16] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+[2026-06-06 23:38:16] PowerShell: 7.6.2
+[2026-06-06 23:38:16] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:38:16] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:38:16] Python: C:\Users\maxpa\AppData\Local\Microsoft\WindowsApps\python.exe
+[2026-06-06 23:38:16] Pip: NO ENCONTRADO
+[2026-06-06 23:38:16] Uvicorn: NO ENCONTRADO
+[2026-06-06 23:38:16] Node version: v24.12.0
+[2026-06-06 23:38:16] NPM version: 11.6.2
+[2026-06-06 23:38:17] Python version: Python 3.14.2
+
+[2026-06-06 23:38:17] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-06 23:38:17] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-06 23:38:17] --- Diagnostico despues del pre-comando ---
+[2026-06-06 23:38:17] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+[2026-06-06 23:38:17] PowerShell: 7.6.2
+[2026-06-06 23:38:17] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:38:17] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:38:17] Python: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast\.venv/Scripts\python.exe
+[2026-06-06 23:38:17] Pip: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast\.venv/Scripts\pip.exe
+[2026-06-06 23:38:17] Uvicorn: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast\.venv/Scripts\uvicorn.exe
+[2026-06-06 23:38:17] Node version: v24.12.0
+[2026-06-06 23:38:17] NPM version: 11.6.2
+[2026-06-06 23:38:17] No Python at '"C:\Users\maxpa\AppData\Local\Programs\Python\Python312\python.exe'
+[2026-06-06 23:38:17] Python version: 
+[2026-06-06 23:38:18] Pip version: 
+
+
+[2026-06-06 23:38:18] --- Proceso terminado con código de salida: 1 ---

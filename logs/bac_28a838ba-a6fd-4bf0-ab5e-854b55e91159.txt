@@ -1,0 +1,40 @@
+[2026-06-06 23:16:24] --- Contexto de ejecucion ---
+[2026-06-06 23:16:24] Modo: terminal capturada interna
+[2026-06-06 23:16:24] Shell: PowerShell 7 (pwsh)
+[2026-06-06 23:16:24] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 23:16:24] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-06 23:16:24] --- Diagnostico del entorno ---
+[2026-06-06 23:16:24] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+[2026-06-06 23:16:24] PowerShell: 7.6.2
+[2026-06-06 23:16:24] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:16:24] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:16:24] Node version: v24.12.0
+[2026-06-06 23:16:25] NPM version: 11.6.2
+
+[2026-06-06 23:16:25] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-06 23:16:25] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+
+[2026-06-06 23:16:28] --- Proceso terminado con código de salida: 1 ---
+[2026-06-06 23:16:42] --- Contexto de ejecucion ---
+[2026-06-06 23:16:42] Modo: terminal capturada interna
+[2026-06-06 23:16:42] Shell: PowerShell 7 (pwsh)
+[2026-06-06 23:16:42] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.exe
+[2026-06-06 23:16:42] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-06 23:16:42] --- Diagnostico del entorno ---
+[2026-06-06 23:16:42] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+[2026-06-06 23:16:42] PowerShell: 7.6.2
+[2026-06-06 23:16:42] Node: C:\Program Files\nodejs\node.exe
+[2026-06-06 23:16:42] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-06 23:16:42] Node version: v24.12.0
+[2026-06-06 23:16:43] NPM version: 11.6.2
+
+[2026-06-06 23:16:43] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-06 23:16:43] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+
+[2026-06-06 23:16:43] --- Proceso terminado con código de salida: 1 ---

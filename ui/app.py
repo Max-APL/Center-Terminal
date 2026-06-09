@@ -65,7 +65,7 @@ class CentralTerminalApp(ctk.CTk):
 
         # Botón Dashboard Global
         self.btn_dashboard = ctk.CTkButton(
-            self.sidebar_frame, text="Panel de Control", height=40,
+            self.sidebar_frame, text="📊  Panel de Control", height=40,
             fg_color=COLOR_PRIMARY, hover_color="#059669", text_color="white",
             anchor="w", font=ctk.CTkFont(size=13, weight="bold"),
             command=lambda: self.show_view("dashboard")
@@ -74,7 +74,7 @@ class CentralTerminalApp(ctk.CTk):
         self.tip_dashboard = ToolTip(self.btn_dashboard, "Ver panel de control global")
 
         self.btn_audit = ctk.CTkButton(
-            self.sidebar_frame, text="Auditoría de Logs", height=40,
+            self.sidebar_frame, text="📜  Auditoría de Logs", height=40,
             fg_color="transparent", hover_color=BG_CARD_HOVER, text_color=COLOR_MUTED,
             anchor="w", font=ctk.CTkFont(size=13, weight="bold"),
             command=lambda: self.show_view("audit")
@@ -84,7 +84,7 @@ class CentralTerminalApp(ctk.CTk):
 
         # Botón Terminal Libre (Sandbox)
         self.btn_quick = ctk.CTkButton(
-            self.sidebar_frame, text="Terminal Libre (Sandbox)", height=40,
+            self.sidebar_frame, text="💻  Terminal Libre (Sandbox)", height=40,
             fg_color="transparent", hover_color=BG_CARD_HOVER, text_color=COLOR_MUTED,
             anchor="w", font=ctk.CTkFont(size=13, weight="bold"),
             command=lambda: self.show_view("quick")
@@ -175,7 +175,7 @@ class CentralTerminalApp(ctk.CTk):
             bg_color = BG_CARD if is_selected else "transparent"
 
             btn = ctk.CTkButton(
-                row_frame, text=ws_name, height=36,
+                row_frame, text=f"📁  {ws_name}", height=36,
                 fg_color=bg_color, hover_color=BG_CARD_HOVER,
                 text_color="white" if is_selected else COLOR_MUTED,
                 anchor="w", font=ctk.CTkFont(size=12),

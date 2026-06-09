@@ -527,21 +527,43 @@ class WorkspaceView(ctk.CTkFrame):
 
         # Caso 0: No hay servicios
         if not services:
-            self.grid_container = ctk.CTkFrame(self.main_area, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
-            self.grid_container.pack(fill="both", expand=True)
+            self.main_area.pack_forget()
+            
+            self.grid_container = ctk.CTkFrame(self, fg_color=BG_CARD, border_width=1, border_color=BORDER_COLOR, corner_radius=12)
+            self.grid_container.pack(fill="both", expand=True, padx=15, pady=(0, 15))
+            
+            empty_container = ctk.CTkFrame(self.grid_container, fg_color="transparent")
+            empty_container.pack(expand=True)
+            
+            icon_lbl = ctk.CTkLabel(
+                empty_container,
+                text="📂",
+                font=ctk.CTkFont(size=48)
+            )
+            icon_lbl.pack(pady=(0, 10))
+            
+            title_lbl = ctk.CTkLabel(
+                empty_container,
+                text="Espacio de Trabajo Vacío",
+                font=ctk.CTkFont(size=16, weight="bold"),
+                text_color="white"
+            )
+            title_lbl.pack(pady=(0, 5))
             
             placeholder_lbl = ctk.CTkLabel(
-                self.grid_container, 
-                text="Este espacio de trabajo está vacío.\n\nHaz clic en '+ Añadir Servicio' arriba para configurar tu primera ejecución.", 
-                font=FONT_SUBTITLE, text_color=COLOR_MUTED
+                empty_container, 
+                text="Haz clic en '+ Añadir Servicio' arriba para configurar tu primera ejecución.", 
+                font=FONT_MUTED, text_color=COLOR_MUTED,
+                justify="center"
             )
-            placeholder_lbl.pack(expand=True)
+            placeholder_lbl.pack()
             
             self.btn_start_all.configure(state="disabled")
             self.btn_stop_all.configure(state="disabled")
             self.maximized_service_id = None # Resetear si se vacía
             return
 
+        self.main_area.pack(fill="both", expand=True, padx=15, pady=(0, 15))
         self.btn_start_all.configure(state="normal")
         self.btn_stop_all.configure(state="normal")
 

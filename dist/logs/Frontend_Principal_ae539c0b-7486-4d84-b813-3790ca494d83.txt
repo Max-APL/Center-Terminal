@@ -1,0 +1,23 @@
+[2026-06-06 21:34:43] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-06 21:34:44] > Frontend_PastenPlast@0.0.0 build
+[2026-06-06 21:34:44] > vite build
+
+[2026-06-06 21:34:44] vite v5.4.21 building for production...
+[2026-06-06 21:34:44] transforming...
+[2026-06-06 21:34:45] ✓ 3 modules transformed.
+[2026-06-06 21:34:45] x Build failed in 97ms
+[2026-06-06 21:34:45] error during build:
+[2026-06-06 21:34:45] [vite]: Rollup failed to resolve import "@/plugins" from "C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/src/main.js".
+[2026-06-06 21:34:45] This is most likely unintended because it can break your application at runtime.
+[2026-06-06 21:34:45] If you do want to externalize this module explicitly add it to
+[2026-06-06 21:34:45] `build.rollupOptions.external`
+[2026-06-06 21:34:45]     at viteWarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65855:17)
+[2026-06-06 21:34:45]     at onRollupWarning (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65887:5)
+[2026-06-06 21:34:45]     at onwarn (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:65550:7)
+[2026-06-06 21:34:45]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:20995:13
+[2026-06-06 21:34:45]     at Object.logger [as onLog] (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:22968:9)
+[2026-06-06 21:34:45]     at ModuleLoader.handleInvalidResolvedId (file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21712:26)
+[2026-06-06 21:34:45]     at file:///C:/Users/maxpa/Desktop/Max-Pasten/PastenPlast/Inventario-PastenPlast/frontend_pastenplast/node_modules/rollup/dist/es/shared/node-entry.js:21670:26
+
+[2026-06-06 21:34:45] --- [FALLO] El pre-comando terminó con error (Código: 1) ---

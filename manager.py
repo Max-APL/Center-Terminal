@@ -5,6 +5,8 @@ import time
 import threading
 import collections
 import psutil
+import shutil
+import tempfile
 from datetime import datetime
 
 class ServiceProcess:
@@ -51,6 +53,231 @@ class ServiceProcess:
         if self.on_state_change:
             self.on_state_change(self.id, new_status)
 
+    def _shell_executable(self, shell_lower):
+        if shell_lower == "cmd" or shell_lower == "default":
+            return "cmd.exe"
+        if shell_lower == "pwsh":
+            return "pwsh.exe"
+        if shell_lower == "powershell":
+            return "powershell.exe"
+        if shell_lower == "bash":
+            return "bash.exe"
+        return "cmd.exe" if sys.platform == "win32" else "/bin/sh"
+
+    def _shell_display_name(self, shell_lower):
+        return {
+            "cmd": "Command Prompt (CMD)",
+            "default": "Command Prompt (CMD)",
+            "pwsh": "PowerShell 7 (pwsh)",
+            "powershell": "Windows PowerShell (powershell)",
+            "bash": "Git Bash (Bash)"
+        }.get(shell_lower, "Shell del sistema")
+
+    def _escape_ps_message(self, text):
+        return str(text).replace("'", "''")
+
+    def _powershell_pre_command(self, cwd_dir=None):
+        command = self.pre_command.strip()
+        if not command:
+            return command
+
+        cleaned = command
+        if cleaned.startswith("& "):
+            cleaned = cleaned[2:].strip()
+
+        bare_path = cleaned.strip("'\"")
+        if bare_path.lower().endswith("activate.ps1"):
+            candidate = bare_path
+            if cwd_dir and not os.path.isabs(candidate):
+                candidate = os.path.join(cwd_dir, candidate)
+            if os.path.exists(candidate):
+                quoted = self._escape_ps_message(os.path.normpath(candidate))
+                return f". '{quoted}'"
+            return f". {cleaned}"
+
+        return self.pre_command
+
+    def _powershell_diagnostic_lines(self, label="Diagnostico del entorno"):
+        label = self._escape_ps_message(label)
+        return [
+            f"Write-Host '--- {label} ---'",
+            "Write-Host \"PWD: $(Get-Location)\"",
+            "Write-Host \"PowerShell: $($PSVersionTable.PSVersion)\"",
+            "$__ct_node = Get-Command node -ErrorAction SilentlyContinue",
+            "$__ct_npm = Get-Command npm -ErrorAction SilentlyContinue",
+            "$__ct_python = Get-Command python -ErrorAction SilentlyContinue",
+            "$__ct_pip = Get-Command pip -ErrorAction SilentlyContinue",
+            "$__ct_uvicorn = Get-Command uvicorn -ErrorAction SilentlyContinue",
+            "Write-Host \"Node: $(if ($__ct_node) { $__ct_node.Source } else { 'NO ENCONTRADO' })\"",
+            "Write-Host \"NPM: $(if ($__ct_npm) { $__ct_npm.Source } else { 'NO ENCONTRADO' })\"",
+            "Write-Host \"Python: $(if ($__ct_python) { $__ct_python.Source } else { 'NO ENCONTRADO' })\"",
+            "Write-Host \"Pip: $(if ($__ct_pip) { $__ct_pip.Source } else { 'NO ENCONTRADO' })\"",
+            "Write-Host \"Uvicorn: $(if ($__ct_uvicorn) { $__ct_uvicorn.Source } else { 'NO ENCONTRADO' })\"",
+            "if ($__ct_node) { Write-Host \"Node version: $(node --version)\" }",
+            "if ($__ct_npm) { Write-Host \"NPM version: $(npm --version)\" }",
+            "if ($__ct_python) { Write-Host \"Python version: $(python --version)\" }",
+            "if ($__ct_pip) { Write-Host \"Pip version: $(pip --version)\" }",
+            "Write-Host ''",
+        ]
+
+    def _build_powershell_script(self, cwd_dir=None):
+        lines = [
+            "$ErrorActionPreference = 'Continue'",
+            "if (Get-Variable PSNativeCommandUseErrorActionPreference -ErrorAction SilentlyContinue) {",
+            "    $PSNativeCommandUseErrorActionPreference = $false",
+            "}",
+            "try {",
+            "    if ($PROFILE -and (Test-Path $PROFILE)) { . $PROFILE }",
+            "} catch {",
+            "    Write-Host \"--- Aviso: no se pudo cargar el perfil de PowerShell: $($_.Exception.Message) ---\"",
+            "}",
+        ]
+        if cwd_dir:
+            cwd_literal = self._escape_ps_message(cwd_dir)
+            lines.append(f"Set-Location -LiteralPath '{cwd_literal}'")
+
+        lines.extend(self._powershell_diagnostic_lines())
+
+        if self.pre_command:
+            pre_label = self._escape_ps_message(self.pre_command)
+            pre_command = self._powershell_pre_command(cwd_dir)
+            lines.extend([
+                f"Write-Host '--- [Paso 1/2] Ejecutando pre-comando: {pre_label} ---'",
+                "$global:LASTEXITCODE = $null",
+                pre_command,
+                "$__ct_pre_code = if ($LASTEXITCODE -ne $null) { [int]$LASTEXITCODE } elseif (-not $?) { 1 } else { 0 }",
+                "if ($__ct_pre_code -ne 0) {",
+                "    Write-Host ''",
+                "    Write-Host \"--- [FALLO] El pre-comando termino con error (Codigo: $__ct_pre_code) ---\"",
+                "    exit $__ct_pre_code",
+                "}",
+                "Write-Host ''",
+                "Write-Host '--- [EXITO] Pre-comando completado. Iniciando comando principal... ---'",
+                "Write-Host ''",
+            ])
+            lines.extend(self._powershell_diagnostic_lines("Diagnostico despues del pre-comando"))
+
+        lines.extend([
+            "$global:LASTEXITCODE = $null",
+            self.command,
+            "$__ct_main_code = if ($LASTEXITCODE -ne $null) { [int]$LASTEXITCODE } elseif (-not $?) { 1 } else { 0 }",
+            "exit $__ct_main_code",
+        ])
+        return "\n".join(lines)
+
+    def _build_cmd_script(self):
+        lines = [
+            "@echo off",
+            "setlocal EnableExtensions",
+        ]
+        if self.pre_command:
+            lines.extend([
+                f"echo --- [Paso 1/2] Ejecutando pre-comando: {self.pre_command} ---",
+                f"call {self.pre_command}",
+                "set \"CT_PRE_CODE=%ERRORLEVEL%\"",
+                "if not \"%CT_PRE_CODE%\"==\"0\" goto ct_pre_failed",
+                "echo.",
+                "echo --- [EXITO] Pre-comando completado. Iniciando comando principal... ---",
+                "echo.",
+            ])
+
+        lines.extend([
+            f"call {self.command}",
+            "set \"CT_MAIN_CODE=%ERRORLEVEL%\"",
+            "exit /b %CT_MAIN_CODE%",
+        ])
+
+        if self.pre_command:
+            lines.extend([
+                ":ct_pre_failed",
+                "echo.",
+                "echo --- [FALLO] El pre-comando termino con error Codigo: %CT_PRE_CODE% ---",
+                "exit /b %CT_PRE_CODE%",
+            ])
+
+        return "\r\n".join(lines) + "\r\n"
+
+    def _build_bash_script(self):
+        if self.pre_command:
+            return (
+                f"echo '--- [Paso 1/2] Ejecutando pre-comando: {self.pre_command} ---'\n"
+                f"{self.pre_command}\n"
+                "ct_pre_code=$?\n"
+                "if [ \"$ct_pre_code\" -ne 0 ]; then\n"
+                "  echo\n"
+                "  echo \"--- [FALLO] El pre-comando termino con error (Codigo: $ct_pre_code) ---\"\n"
+                "  exit \"$ct_pre_code\"\n"
+                "fi\n"
+                "echo\n"
+                "echo '--- [EXITO] Pre-comando completado. Iniciando comando principal... ---'\n"
+                "echo\n"
+                f"{self.command}\n"
+            )
+        return self.command
+
+    def _build_captured_shell_args(self, shell_lower, cwd_dir=None):
+        if shell_lower in ("pwsh", "powershell"):
+            executable = self._shell_executable(shell_lower)
+            script_path = self._write_temp_script(".ps1", self._build_powershell_script(cwd_dir), encoding="utf-8-sig")
+            if shell_lower == "powershell":
+                return [executable, "-NoLogo", "-ExecutionPolicy", "Bypass", "-File", script_path]
+            return [executable, "-NoLogo", "-File", script_path]
+
+        if shell_lower in ("cmd", "default"):
+            script_path = self._write_temp_script(".cmd", self._build_cmd_script())
+            return ["cmd.exe", "/d", "/s", "/c", script_path]
+
+        if shell_lower == "bash":
+            return ["bash.exe", "-c", self._build_bash_script()]
+
+        return self.command
+
+    def _write_temp_script(self, suffix, content, encoding=None):
+        fd, path = tempfile.mkstemp(prefix="central-terminal-", suffix=suffix, text=True)
+        encoding = encoding or ("mbcs" if sys.platform == "win32" else "utf-8")
+        with os.fdopen(fd, "w", encoding=encoding, newline="") as f:
+            f.write(content)
+        return path
+
+    def _cleanup_temp_script(self, path):
+        if not path:
+            return
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+
+    def _log_execution_context(self, cwd_dir, shell_lower, captured=True):
+        executable = self._shell_executable(shell_lower)
+        resolved = shutil.which(executable) or executable
+        mode = "terminal capturada interna" if captured else "consola nativa externa"
+        self._add_log(
+            f"--- Contexto de ejecucion ---\n"
+            f"Modo: {mode}\n"
+            f"Shell: {self._shell_display_name(shell_lower)}\n"
+            f"Ejecutable: {resolved}\n"
+            f"Directorio: {cwd_dir or 'Predeterminado'}\n\n"
+        )
+
+    def _stream_process_output(self, process):
+        if not process or not process.stdout:
+            return process.wait() if process else -1
+
+        for line in iter(process.stdout.readline, b''):
+            if self._should_stop:
+                break
+            try:
+                decoded = line.decode('utf-8')
+            except UnicodeDecodeError:
+                try:
+                    decoded = line.decode('cp1252')
+                except UnicodeDecodeError:
+                    decoded = line.decode('latin-1', errors='replace')
+            self._add_log(decoded)
+
+        process.stdout.close()
+        return process.wait()
+
     def start(self):
         if self.status in ["running", "starting"]:
             return
@@ -72,6 +299,7 @@ class ServiceProcess:
             run_env.update(self.env)
 
         def run():
+            temp_script_path = None
             try:
                 cwd_dir = self.cwd if self.cwd and os.path.exists(self.cwd) else None
                 creationflags = 0
@@ -154,85 +382,15 @@ class ServiceProcess:
                     else:
                         creationflags = 0
 
-                    # A. Ejecutar Pre-comando si existe
-                    if self.pre_command:
-                        self._add_log(f"--- [Paso 1/2] Ejecutando pre-comando: {self.pre_command} ---\n")
-                        
-                        if shell_lower == "cmd":
-                            pre_args = ["cmd.exe", "/c", self.pre_command]
-                            pre_use_shell = False
-                        elif shell_lower == "pwsh":
-                            pre_args = ["pwsh.exe", "-Command", self.pre_command]
-                            pre_use_shell = False
-                        elif shell_lower == "powershell":
-                            pre_args = ["powershell.exe", "-Command", self.pre_command]
-                            pre_use_shell = False
-                        elif shell_lower == "bash":
-                            pre_args = ["bash.exe", "-c", self.pre_command]
-                            pre_use_shell = False
-                        else:
-                            pre_args = self.pre_command
-                            pre_use_shell = True
-
-                        pre_proc = subprocess.Popen(
-                            pre_args,
-                            shell=pre_use_shell,
-                            cwd=cwd_dir,
-                            env=run_env,
-                            stdout=subprocess.PIPE,
-                            stderr=subprocess.STDOUT,
-                            creationflags=creationflags
-                        )
-                        self.process = pre_proc  # Registrar para permitir detener si el usuario cancela
-
-                        for line in iter(pre_proc.stdout.readline, b''):
-                            if self._should_stop:
-                                break
-                            try:
-                                decoded = line.decode('utf-8')
-                            except UnicodeDecodeError:
-                                try:
-                                    decoded = line.decode('cp1252')
-                                except UnicodeDecodeError:
-                                    decoded = line.decode('latin-1', errors='replace')
-                            self._add_log(decoded)
-
-                        pre_proc.stdout.close()
-                        pre_exit = pre_proc.wait()
-
-                        if self._should_stop:
-                            self.change_status("stopped")
-                            self._add_log("\n--- Detenido por el usuario durante el pre-inicio ---\n")
-                            return
-
-                        if pre_exit != 0:
-                            self.exit_code = pre_exit
-                            self.change_status("error")
-                            self._add_log(f"\n--- [FALLO] El pre-comando terminó con error (Código: {pre_exit}) ---\n")
-                            return
-
-                        self._add_log("\n--- [ÉXITO] Pre-comando completado. Iniciando comando principal... ---\n\n")
-
-                    # B. Ejecutar Comando Principal
-                    if shell_lower == "cmd":
-                        cmd_args = ["cmd.exe", "/c", self.command]
-                        use_shell = False
-                    elif shell_lower == "pwsh":
-                        cmd_args = ["pwsh.exe", "-Command", self.command]
-                        use_shell = False
-                    elif shell_lower == "powershell":
-                        cmd_args = ["powershell.exe", "-Command", self.command]
-                        use_shell = False
-                    elif shell_lower == "bash":
-                        cmd_args = ["bash.exe", "-c", self.command]
-                        use_shell = False
-                    else:
-                        cmd_args = self.command
-                        use_shell = True
-
                     if self._should_stop:
                         self.change_status("stopped")
                         return
+
+                    cmd_args = self._build_captured_shell_args(shell_lower, cwd_dir)
+                    use_shell = not isinstance(cmd_args, list)
+                    if shell_lower in ("cmd", "default", "pwsh", "powershell") and isinstance(cmd_args, list):
+                        temp_script_path = cmd_args[-1]
+                    self._log_execution_context(cwd_dir, shell_lower, captured=True)
 
                     self.process = subprocess.Popen(
                         cmd_args,
@@ -247,10 +405,11 @@ class ServiceProcess:
                     self.start_time = time.time()
                     self.change_status("running")
 
-                    self._read_thread = threading.Thread(target=self._read_stdout, daemon=True)
-                    self._read_thread.start()
-
-                    exit_code = self.process.wait()
+                    try:
+                        exit_code = self._stream_process_output(self.process)
+                    finally:
+                        self._cleanup_temp_script(temp_script_path)
+                        temp_script_path = None
                     self.exit_code = exit_code
 
                 # 3. Mapear resultados finales de la ejecución
@@ -270,6 +429,7 @@ class ServiceProcess:
                     self._add_log("\n--- Servicio detenido por el usuario ---\n")
 
             except Exception as e:
+                self._cleanup_temp_script(temp_script_path)
                 self.exit_code = -1
                 self.change_status("error")
                 err_msg = f"Error al iniciar el servicio: {str(e)}\n"
@@ -304,7 +464,8 @@ class ServiceProcess:
         # Escribir automáticamente en archivo de auditoría local
         try:
             import re
-            base_dir = os.path.dirname(os.path.abspath(__file__))
+            from config import get_base_dir
+            base_dir = get_base_dir()
             logs_dir = os.path.join(base_dir, "logs")
             os.makedirs(logs_dir, exist_ok=True)
             
