@@ -9,6 +9,13 @@ import ctypes
 import customtkinter as ctk
 from ui.theme import *
 from ui.components import ToolTip
+from shell_profiles import (
+    get_default_shell_id,
+    get_shell_options,
+    get_shell_profile,
+    shell_id_from_label,
+    shell_label_from_id,
+)
 
 # Prototipos de la API de Windows (Ctypes)
 user32 = ctypes.windll.user32
@@ -104,6 +111,7 @@ class QuickTerminalPanel(ctk.CTkFrame):
         self.shell_type = shell_type
         self.terminal_id = terminal_id
         self.on_close = on_close
+        self.shell_options = get_shell_options(include_default=False)
         
         self.active = False
         self.process = None
@@ -163,17 +171,19 @@ class QuickTerminalPanel(ctk.CTkFrame):
         self.tip_close = ToolTip(self.btn_close, "Cerrar terminal")
         
         # Dropdown para elegir/cambiar intérprete independientemente
-        shell_val_inv = {
-            "pwsh": "PowerShell 7 (pwsh)",
-            "powershell": "PowerShell",
-            "cmd": "CMD",
-            "bash": "Git Bash"
-        }.get(self.shell_type, "PowerShell")
+        shell_labels = [label for label, _ in self.shell_options]
+        if not shell_labels:
+            self.shell_options = get_shell_options(include_default=True)
+            shell_labels = [label for label, _ in self.shell_options]
+
+        shell_val_inv = shell_label_from_id(self.shell_type)
+        if shell_val_inv not in shell_labels and shell_labels:
+            shell_val_inv = shell_labels[0]
         
         self.shell_var = ctk.StringVar(value=shell_val_inv)
         self.shell_dropdown = ctk.CTkOptionMenu(
             self.header,
-            values=["PowerShell", "CMD", "Git Bash", "PowerShell 7 (pwsh)"],
+            values=shell_labels,
             variable=self.shell_var,
             width=140, height=24,
             fg_color=BG_MAIN,
@@ -319,14 +329,8 @@ class QuickTerminalPanel(ctk.CTkFrame):
         
         # Arrancar mediante conhost.exe sin alterar el título nativo del proceso
         # para que se aplique la configuración del registro de cada shell (fuentes, colores, etc)
-        if self.shell_type == "cmd":
-            shell_cmd = ["conhost.exe", "cmd.exe"]
-        elif self.shell_type == "bash":
-            shell_cmd = ["conhost.exe", "bash.exe"]
-        elif self.shell_type == "pwsh":
-            shell_cmd = ["conhost.exe", "pwsh.exe"]
-        else: # powershell
-            shell_cmd = ["conhost.exe", "powershell.exe"]
+        profile = get_shell_profile(self.shell_type)
+        shell_cmd = ["conhost.exe", profile.executable, *profile.args]
             
         try:
             # Configurar para arrancar de forma invisible y evitar robos de foco o parpadeos
@@ -398,13 +402,7 @@ class QuickTerminalPanel(ctk.CTkFrame):
             sys.stderr.write(f"Error emparentando consola nativa: {e}\n")
 
     def change_shell(self, new_shell_value):
-        shell_mapping = {
-            "PowerShell": "powershell",
-            "CMD": "cmd",
-            "Git Bash": "bash",
-            "PowerShell 7 (pwsh)": "pwsh"
-        }
-        target_shell = shell_mapping.get(new_shell_value, "powershell")
+        target_shell = shell_id_from_label(new_shell_value)
         if target_shell == self.shell_type:
             return
             
@@ -542,6 +540,7 @@ class FreeQuickView(ctk.CTkFrame):
         self.terminals = []  # list of QuickTerminalPanel
         self.terminal_counter = 0
         self.active_panel = None
+        self.shell_options = get_shell_options(include_default=False)
         
         self.create_widgets()
         self.rebuild_grid()
@@ -567,10 +566,18 @@ class FreeQuickView(ctk.CTkFrame):
         actions_frame.pack(side="right", fill="y", padx=15, pady=12)
 
         # Dropdown para elegir intérprete predeterminado para nuevas terminales
-        self.shell_var = ctk.StringVar(value="PowerShell")
+        shell_labels = [label for label, _ in self.shell_options]
+        if not shell_labels:
+            self.shell_options = get_shell_options(include_default=True)
+            shell_labels = [label for label, _ in self.shell_options]
+        default_label = shell_label_from_id(get_default_shell_id())
+        if default_label not in shell_labels and shell_labels:
+            default_label = shell_labels[0]
+
+        self.shell_var = ctk.StringVar(value=default_label)
         self.shell_dropdown = ctk.CTkOptionMenu(
             actions_frame, 
-            values=["PowerShell", "CMD", "Git Bash", "PowerShell 7 (pwsh)"],
+            values=shell_labels,
             variable=self.shell_var,
             width=150, height=32,
             fg_color=BG_MAIN,
@@ -610,14 +617,7 @@ class FreeQuickView(ctk.CTkFrame):
 
     def add_terminal(self):
         self.terminal_counter += 1
-        
-        shell_mapping = {
-            "PowerShell": "powershell",
-            "CMD": "cmd",
-            "Git Bash": "bash",
-            "PowerShell 7 (pwsh)": "pwsh"
-        }
-        selected_shell = shell_mapping.get(self.shell_var.get(), "powershell")
+        selected_shell = shell_id_from_label(self.shell_var.get())
         
         panel = QuickTerminalPanel(
             parent=self.main_area,

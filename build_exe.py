@@ -18,6 +18,8 @@ def check_and_install_pyinstaller():
 
 def build_executable():
     print("[*] Iniciando la compilación del ejecutable...")
+    icon_path = os.path.join("assets", "central_terminal.ico")
+    assets_data = f"assets{os.pathsep}assets"
     
     # Parámetros del comando de PyInstaller
     cmd = [
@@ -25,6 +27,8 @@ def build_executable():
         "--onefile",
         "--noconsole",
         "--collect-all", "customtkinter",
+        "--add-data", assets_data,
+        "--icon", icon_path,
         "--name", "Central Terminal",
         "main.py"
     ]

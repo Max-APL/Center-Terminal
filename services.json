@@ -3,6 +3,7 @@
         {
             "id": "95d63c01-1f26-4154-929f-64f22ac43a72",
             "name": "FinanceHub",
+            "startup_profiles": [],
             "services": [
                 {
                     "id": "3479bc38-25ff-4018-9b7b-c74b68967abc",
@@ -14,17 +15,47 @@
                     "shell_native": false,
                     "auto_restart": false,
                     "restart_delay": 2,
-                    "env": {}
+                    "env": {},
+                    "deploy_profiles": [
+                        {
+                            "id": "default",
+                            "name": "Predeterminado",
+                            "shell": "pwsh",
+                            "steps": [
+                                {
+                                    "id": "7dcdfa75-d417-45d3-b329-daf044166e1b",
+                                    "name": "Paso 1",
+                                    "command": "npm run build"
+                                },
+                                {
+                                    "id": "a67abc5a-b231-4432-8290-cef4b9a23b9b",
+                                    "name": "Comando final",
+                                    "command": "npm run preview -- --host --port 8080"
+                                }
+                            ]
+                        }
+                    ],
+                    "default_deploy_profile_id": "default"
                 }
             ]
         },
         {
             "id": "ad241d85-c819-4bef-87e7-e3f67bfc2f36",
             "name": "Pastenplast",
+            "startup_profiles": [
+                {
+                    "id": "0aa5581a-f4d7-4986-b3f1-b07d3147918d",
+                    "name": "Quick Deploy",
+                    "service_profiles": {
+                        "6c40e463-4458-4eb3-bf86-f6d01164541b": "8550bb97-a321-4e76-88ce-b7662d296b80",
+                        "28a838ba-a6fd-4bf0-ab5e-854b55e91159": "default"
+                    }
+                }
+            ],
             "services": [
                 {
                     "id": "6c40e463-4458-4eb3-bf86-f6d01164541b",
-                    "name": "Front",
+                    "name": "Frontend",
                     "pre_command": "npm run build",
                     "command": "serve -s dist -l 8080",
                     "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\PastenPlast\\Inventario-PastenPlast\\frontend_pastenplast",
@@ -32,11 +63,31 @@
                     "shell_native": false,
                     "auto_restart": false,
                     "restart_delay": 2,
-                    "env": {}
+                    "env": {},
+                    "deploy_profiles": [
+                        {
+                            "id": "8550bb97-a321-4e76-88ce-b7662d296b80",
+                            "name": "Despliegue",
+                            "shell": "pwsh",
+                            "steps": [
+                                {
+                                    "id": "8e3faf3c-3471-4a9e-964c-d0fbc4fd1708",
+                                    "name": "Paso 1",
+                                    "command": "npm run build"
+                                },
+                                {
+                                    "id": "d6772c85-be88-424d-ba63-ab073f13d9f3",
+                                    "name": "Comando final",
+                                    "command": "serve -s dist -l 8080"
+                                }
+                            ]
+                        }
+                    ],
+                    "default_deploy_profile_id": "8550bb97-a321-4e76-88ce-b7662d296b80"
                 },
                 {
                     "id": "28a838ba-a6fd-4bf0-ab5e-854b55e91159",
-                    "name": "back",
+                    "name": "Backend",
                     "pre_command": ".\\.venv\\Scripts\\Activate.ps1",
                     "command": "uvicorn app.main:app --host 0.0.0.0 --port 8000",
                     "cwd": "C:\\Users\\maxpa\\Desktop\\Max-Pasten\\PastenPlast\\Inventario-PastenPlast\\backend_pastenplast",
@@ -44,7 +95,44 @@
                     "shell_native": false,
                     "auto_restart": false,
                     "restart_delay": 2,
-                    "env": {}
+                    "env": {},
+                    "deploy_profiles": [
+                        {
+                            "id": "default",
+                            "name": "Quick Deploy",
+                            "shell": "pwsh",
+                            "steps": [
+                                {
+                                    "id": "5145d4c6-0385-4a98-802d-2a6c759f7d6c",
+                                    "name": "Paso 1",
+                                    "command": ".\\.venv\\Scripts\\Activate.ps1"
+                                },
+                                {
+                                    "id": "0ae11637-7df2-4074-b3e8-1c1752895b73",
+                                    "name": "Comando final",
+                                    "command": "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "a354a4b4-7332-4989-89b1-7f0afdf8b218",
+                            "name": "Quick Deploy copia",
+                            "shell": "pwsh",
+                            "steps": [
+                                {
+                                    "id": "9d85d3e8-520e-4cdb-a992-2fa70b7e2f5d",
+                                    "name": "Paso 1",
+                                    "command": ".\\.venv\\Scripts\\Activate.ps1"
+                                },
+                                {
+                                    "id": "87348482-e4dc-4292-ad3f-49a29f6a4fe0",
+                                    "name": "Comando final",
+                                    "command": "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+                                }
+                            ]
+                        }
+                    ],
+                    "default_deploy_profile_id": "default"
                 }
             ]
         }

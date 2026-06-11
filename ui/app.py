@@ -9,7 +9,7 @@ from ui.audit_view import AuditView
 from ui.quick_view import FreeQuickView
 from ui.service_dialog import ServiceDialog
 from config import save_workspaces
-from ui.components import ToolTip
+from ui.components import ToolTip, apply_app_icon
 
 class CentralTerminalApp(ctk.CTk):
     def __init__(self, manager):
@@ -19,6 +19,7 @@ class CentralTerminalApp(ctk.CTk):
         
         # Configurar Ventana Principal
         self.title("Central Terminal - Workspaces")
+        apply_app_icon(self)
         self.geometry("1024x660")
         self.minimum_size = (950, 600)
         self.minsize(self.minimum_size[0], self.minimum_size[1])
@@ -141,7 +142,8 @@ class CentralTerminalApp(ctk.CTk):
             self.manager,
             on_action=self.handle_service_action,
             on_delete_workspace=self.confirm_delete_workspace,
-            on_add_service=self.open_add_service_dialog
+            on_add_service=self.open_add_service_dialog,
+            on_workspace_startups_changed=self.persist_workspaces
         )
         
         self.audit_view = AuditView(
@@ -219,6 +221,7 @@ class CentralTerminalApp(ctk.CTk):
             self.btn_audit.configure(fg_color="transparent", hover_color=BG_CARD_HOVER, text_color=COLOR_MUTED)
             self.btn_quick.configure(fg_color="transparent", hover_color=BG_CARD_HOVER, text_color=COLOR_MUTED)
             self.highlight_selected_sidebar_item()
+            self.workspace_view.schedule_panels_scroll_to_end()
         elif view_name == "audit":
             self.dashboard_view.pack_forget()
             self.workspace_view.pack_forget()
@@ -331,28 +334,22 @@ class CentralTerminalApp(ctk.CTk):
     def handle_service_action(self, service_id, action):
         """Procesa las acciones enviadas desde las vistas secundarias."""
         if action == "start":
-            self.manager.start_service(service_id)
+            self.manager.start_service(service_id, execution_mode="captured")
         elif action == "stop":
             self.manager.stop_service(service_id)
         elif action == "restart":
-            self.manager.restart_service(service_id)
+            self.manager.restart_service(service_id, execution_mode="captured")
         elif action == "edit":
             # Obtener config actual y abrir diálogo
             service = self.manager.services.get(service_id)
             if service:
-                cfg = {
-                    "id": service.id,
-                    "name": service.name,
-                    "pre_command": getattr(service, "pre_command", ""),
-                    "command": service.command,
-                    "cwd": service.cwd,
-                    "shell": service.shell_type,
-                    "shell_native": getattr(service, "shell_native", False),
-                    "auto_restart": service.auto_restart,
-                    "restart_delay": service.restart_delay,
-                    "env": service.env
-                }
+                cfg = service.to_config()
                 dialog = ServiceDialog(self, service_config=cfg, on_save=self.save_edited_service)
+        elif action == "audit":
+            self.show_view("audit")
+            self.audit_view.refresh()
+            if service_id in self.manager.services:
+                self.audit_view.select_service(service_id)
         elif action == "delete":
             self.delete_service(service_id)
 
@@ -362,21 +359,11 @@ class CentralTerminalApp(ctk.CTk):
         for ws_id, ws_name in self.manager.workspaces.items():
             services_list = []
             for service in self.manager.workspace_services.get(ws_id, []):
-                services_list.append({
-                    "id": service.id,
-                    "name": service.name,
-                    "pre_command": getattr(service, "pre_command", ""),
-                    "command": service.command,
-                    "cwd": service.cwd,
-                    "shell": service.shell_type,
-                    "shell_native": getattr(service, "shell_native", False),
-                    "auto_restart": service.auto_restart,
-                    "restart_delay": service.restart_delay,
-                    "env": service.env
-                })
+                services_list.append(service.to_config())
             data["workspaces"].append({
                 "id": ws_id,
                 "name": ws_name,
+                "startup_profiles": self.manager.get_workspace_startups_config(ws_id),
                 "services": services_list
             })
         save_workspaces(data)
