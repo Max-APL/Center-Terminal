@@ -6,6 +6,7 @@ binaries = []
 hiddenimports = []
 tmp_ret = collect_all('customtkinter')
 datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+datas += [('assets', 'assets')]
 
 
 a = Analysis(
@@ -42,4 +43,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='assets/central_terminal.ico',
 )

@@ -1,0 +1,15 @@
+
+[2026-06-10 20:30:14] --- Proceso terminado con código de salida: 15 ---
+
+[2026-06-10 20:30:14] --- [Paso 1/2] Ejecutando: Paso 1 ---
+
+[2026-06-10 20:30:14] --- [EXITO] Paso 1 completado. Continuando... ---
+
+[2026-06-10 20:30:14] --- [Paso 2/2] Ejecutando: Comando final ---
+[2026-06-10 20:30:16] 2026-06-10 20:30:16,611 - INFO - \u2705 Pool de conexiones 'mypool' creado con tamaño 32
+[2026-06-10 20:30:17] INFO:     Started server process [15468]
+[2026-06-10 20:30:17] INFO:     Waiting for application startup.
+[2026-06-10 20:30:17] INFO:     Application startup complete.
+[2026-06-10 20:30:17] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+[2026-06-10 22:49:21] --- Servicio detenido por el usuario ---

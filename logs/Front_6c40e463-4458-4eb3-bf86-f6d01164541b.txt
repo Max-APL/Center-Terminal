@@ -134,3 +134,365 @@
 [2026-06-06 23:25:15]  INFO  Accepting connections at http://localhost:8080
 
 [2026-06-06 23:38:04] --- Servicio detenido por el usuario ---
+[2026-06-10 17:30:02] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 17:30:02] Pre-comando: npm run build
+[2026-06-10 17:30:02] Comando principal: serve -s dist -l 8080
+[2026-06-10 17:30:02] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-10 17:30:02] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 17:30:02] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 17:36:04] --- Servicio detenido por el usuario ---
+[2026-06-10 18:07:29] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:07:29] Pre-comando: npm run buil
+[2026-06-10 18:07:29] Comando principal: serve -s dist -l 8080
+[2026-06-10 18:07:29] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-10 18:07:29] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:07:29] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:07:32] --- Proceso terminado con código de salida: 1 ---
+[2026-06-10 18:07:38] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:07:38] Pre-comando: npm run buil
+[2026-06-10 18:07:38] Comando principal: serve -s dist -l 8080
+[2026-06-10 18:07:38] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-10 18:07:38] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:07:38] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:07:43] --- Proceso terminado con código de salida: 1 ---
+[2026-06-10 18:08:55] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:08:55] Pre-comando: npm run build
+[2026-06-10 18:08:55] Comando principal: serve -s dist -l 8080
+[2026-06-10 18:08:55] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-10 18:08:55] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:08:55] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:10:05] --- Servicio detenido por el usuario ---
+[2026-06-10 18:12:06] --- Contexto de ejecucion ---
+[2026-06-10 18:12:06] Modo: terminal capturada interna
+[2026-06-10 18:12:06] Shell: PowerShell 7
+[2026-06-10 18:12:06] Ejecutable: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\pwsh.EXE
+[2026-06-10 18:12:06] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+
+[2026-06-10 18:12:07] --- Diagnostico del entorno ---
+[2026-06-10 18:12:07] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+[2026-06-10 18:12:07] PowerShell: 7.6.2
+[2026-06-10 18:12:08] Node: C:\Program Files\nodejs\node.exe
+[2026-06-10 18:12:08] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-10 18:12:08] Python: C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Scripts\python.exe
+[2026-06-10 18:12:08] Pip: C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Scripts\pip.exe
+[2026-06-10 18:12:08] Uvicorn: NO ENCONTRADO
+[2026-06-10 18:12:08] Node version: v24.12.0
+[2026-06-10 18:12:08] NPM version: 11.6.2
+[2026-06-10 18:12:08] Python version: Python 3.14.2
+[2026-06-10 18:12:10] Pip version: pip 25.3 from C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Lib\site-packages\pip (python 3.14) 
+
+[2026-06-10 18:12:10] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 18:12:10] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 18:12:10] > vite build
+
+[2026-06-10 18:12:11] vite v5.4.21 building for production...
+[2026-06-10 18:12:11] transforming...
+[2026-06-10 18:12:25] ✓ 1157 modules transformed.
+[2026-06-10 18:12:25] rendering chunks...
+[2026-06-10 18:12:27] computing gzip size...
+[2026-06-10 18:12:27] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 18:12:27] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 18:12:27] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 18:12:27] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 18:12:27] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 18:12:27] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 18:12:27] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 18:12:27] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 18:12:27] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 18:12:27] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 18:12:27] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 18:12:27] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 18:12:27] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 18:12:27] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 18:12:27] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 18:12:27] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 18:12:27] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 18:12:27] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 18:12:27] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 18:12:27] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 18:12:27] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 18:12:27] - Using dynamic import() to code-split the application
+[2026-06-10 18:12:27] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 18:12:27] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 18:12:27] ✓ built in 15.54s
+
+[2026-06-10 18:12:27] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 18:12:27] --- Diagnostico despues del pre-comando ---
+[2026-06-10 18:12:27] PWD: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\frontend_pastenplast
+[2026-06-10 18:12:27] PowerShell: 7.6.2
+[2026-06-10 18:12:27] Node: C:\Program Files\nodejs\node.exe
+[2026-06-10 18:12:27] NPM: C:\Program Files\nodejs\npm.ps1
+[2026-06-10 18:12:27] Python: C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Scripts\python.exe
+[2026-06-10 18:12:27] Pip: C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Scripts\pip.exe
+[2026-06-10 18:12:27] Uvicorn: NO ENCONTRADO
+[2026-06-10 18:12:27] Node version: v24.12.0
+[2026-06-10 18:12:28] NPM version: 11.6.2
+[2026-06-10 18:12:28] Python version: Python 3.14.2
+[2026-06-10 18:12:28] Pip version: pip 25.3 from C:\Users\maxpa\Desktop\Max-Pasten\Projects\Central-Terminal\.venv\Lib\site-packages\pip (python 3.14) 
+
+[2026-06-10 18:12:29]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 18:14:48] --- Servicio detenido por el usuario ---
+[2026-06-10 18:17:55] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 18:17:56] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 18:17:56] > vite build
+
+[2026-06-10 18:17:57] vite v5.4.21 building for production...
+[2026-06-10 18:17:57] transforming...
+[2026-06-10 18:18:13] ✓ 1157 modules transformed.
+[2026-06-10 18:18:13] rendering chunks...
+[2026-06-10 18:18:15] computing gzip size...
+[2026-06-10 18:18:15] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 18:18:15] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 18:18:15] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 18:18:15] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 18:18:15] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 18:18:15] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 18:18:15] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 18:18:15] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 18:18:15] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 18:18:15] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 18:18:15] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 18:18:15] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 18:18:15] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 18:18:15] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 18:18:15] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 18:18:15] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 18:18:15] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 18:18:15] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 18:18:15] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 18:18:15] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 18:18:15] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 18:18:15] - Using dynamic import() to code-split the application
+[2026-06-10 18:18:15] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 18:18:15] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 18:18:15] ✓ built in 17.70s
+
+[2026-06-10 18:18:15] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 18:18:16]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 18:22:37] --- Servicio detenido por el usuario ---
+[2026-06-10 18:23:14] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 18:23:14] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 18:23:14] > vite build
+
+[2026-06-10 18:23:15] vite v5.4.21 building for production...
+[2026-06-10 18:23:15] transforming...
+[2026-06-10 18:23:31] ✓ 1157 modules transformed.
+[2026-06-10 18:23:32] rendering chunks...
+[2026-06-10 18:23:34] computing gzip size...
+[2026-06-10 18:23:34] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 18:23:34] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 18:23:34] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 18:23:34] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 18:23:34] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 18:23:34] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 18:23:34] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 18:23:34] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 18:23:34] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 18:23:34] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 18:23:34] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 18:23:34] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 18:23:34] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 18:23:34] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 18:23:34] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 18:23:34] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 18:23:34] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 18:23:34] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 18:23:34] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 18:23:34] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 18:23:34] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 18:23:34] - Using dynamic import() to code-split the application
+[2026-06-10 18:23:34] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 18:23:34] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 18:23:34] ✓ built in 18.77s
+
+[2026-06-10 18:23:34] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 18:23:35]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 19:03:53] --- Servicio detenido por el usuario ---
+[2026-06-10 19:11:17] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 19:11:17] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 19:11:17] > vite build
+
+[2026-06-10 19:11:18] vite v5.4.21 building for production...
+[2026-06-10 19:11:18] transforming...
+[2026-06-10 19:11:32] ✓ 1157 modules transformed.
+[2026-06-10 19:11:32] rendering chunks...
+[2026-06-10 19:11:34] computing gzip size...
+[2026-06-10 19:11:34] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 19:11:34] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 19:11:34] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 19:11:34] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 19:11:34] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 19:11:34] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 19:11:34] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 19:11:34] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 19:11:34] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 19:11:34] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 19:11:34] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 19:11:34] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 19:11:34] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 19:11:34] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 19:11:34] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 19:11:34] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 19:11:34] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 19:11:34] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 19:11:34] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 19:11:34] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 19:11:34] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 19:11:34] - Using dynamic import() to code-split the application
+[2026-06-10 19:11:34] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 19:11:34] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 19:11:34] ✓ built in 15.55s
+
+[2026-06-10 19:11:34] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 19:11:36]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 19:14:39] --- Servicio detenido por el usuario ---
+[2026-06-10 19:36:04] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 19:36:05] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 19:36:05] > vite build
+
+[2026-06-10 19:36:06] vite v5.4.21 building for production...
+[2026-06-10 19:36:06] transforming...
+[2026-06-10 19:36:19] ✓ 1157 modules transformed.
+[2026-06-10 19:36:20] rendering chunks...
+[2026-06-10 19:36:21] computing gzip size...
+[2026-06-10 19:36:21] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 19:36:21] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 19:36:21] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 19:36:21] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 19:36:21] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 19:36:21] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 19:36:21] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 19:36:21] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 19:36:21] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 19:36:21] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 19:36:21] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 19:36:21] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 19:36:21] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 19:36:21] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 19:36:21] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 19:36:21] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 19:36:21] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 19:36:21] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 19:36:21] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 19:36:21] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 19:36:21] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 19:36:21] - Using dynamic import() to code-split the application
+[2026-06-10 19:36:21] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 19:36:21] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 19:36:21] ✓ built in 15.39s
+
+[2026-06-10 19:36:21] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 19:36:22]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 19:37:55] --- Servicio detenido por el usuario ---
+[2026-06-10 19:37:57] --- [Paso 1/2] Ejecutando pre-comando: npm run build ---
+
+[2026-06-10 19:37:58] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 19:37:58] > vite build
+
+[2026-06-10 19:37:59] vite v5.4.21 building for production...
+[2026-06-10 19:37:59] transforming...
+[2026-06-10 19:38:13] ✓ 1157 modules transformed.
+[2026-06-10 19:38:14] rendering chunks...
+[2026-06-10 19:38:16] computing gzip size...
+[2026-06-10 19:38:16] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 19:38:16] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 19:38:16] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 19:38:16] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 19:38:16] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 19:38:16] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 19:38:16] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 19:38:16] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 19:38:16] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 19:38:16] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 19:38:16] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 19:38:16] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 19:38:16] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 19:38:16] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 19:38:16] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 19:38:16] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 19:38:16] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 19:38:16] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 19:38:16] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 19:38:16] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 19:38:16] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 19:38:16] - Using dynamic import() to code-split the application
+[2026-06-10 19:38:16] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 19:38:16] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 19:38:16] ✓ built in 17.02s
+
+[2026-06-10 19:38:16] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 19:38:17]  INFO  Accepting connections at http://localhost:8080
+
+[2026-06-10 20:18:15] --- Servicio detenido por el usuario ---
+[2026-06-10 20:28:44] --- Ejecutando flujo 'Desplegue' (PowerShell 7) ---
+[2026-06-10 20:28:45] --- [Paso 1/2] Ejecutando: Paso 1 ---
+
+[2026-06-10 20:28:46] > Frontend_PastenPlast@0.0.0 build
+[2026-06-10 20:28:46] > vite build
+
+[2026-06-10 20:28:47] vite v5.4.21 building for production...
+[2026-06-10 20:28:47] transforming...
+[2026-06-10 20:29:01] ✓ 1157 modules transformed.
+[2026-06-10 20:29:02] rendering chunks...
+[2026-06-10 20:29:03] computing gzip size...
+[2026-06-10 20:29:03] dist/index.html                                             1.45 kB │ gzip:     0.57 kB
+[2026-06-10 20:29:03] dist/assets/membretado marca de agua-Cgt5QS1u.png           7.01 kB
+[2026-06-10 20:29:03] dist/assets/comprobado-CW67wavV.png                        14.52 kB
+[2026-06-10 20:29:03] dist/assets/advertencia-B3UC4Cp2.png                       21.67 kB
+[2026-06-10 20:29:03] dist/assets/disminucion-BX2L_ndd.png                       31.58 kB
+[2026-06-10 20:29:03] dist/assets/LogoTitle-CySPGjIw.png                         62.10 kB
+[2026-06-10 20:29:03] dist/assets/Logo2-AdLtFWQh.png                             99.55 kB
+[2026-06-10 20:29:03] dist/assets/bootstrap-icons-BtvjY1KL.woff2                130.40 kB
+[2026-06-10 20:29:03] dist/assets/bootstrap-icons-BOrJxbIo.woff                 176.03 kB
+[2026-06-10 20:29:03] dist/assets/logo-CLlOpJlF.png                             283.37 kB
+[2026-06-10 20:29:03] dist/assets/materialdesignicons-webfont-CYDMK1kx.woff2    385.36 kB
+[2026-06-10 20:29:03] dist/assets/materialdesignicons-webfont-CgCzGbLl.woff     561.78 kB
+[2026-06-10 20:29:03] dist/assets/membretado-QtZXZx_a.png                       897.08 kB
+[2026-06-10 20:29:03] dist/assets/materialdesignicons-webfont-D3kAzl71.ttf    1,243.50 kB
+[2026-06-10 20:29:03] dist/assets/materialdesignicons-webfont-DttUABo4.eot    1,243.72 kB
+[2026-06-10 20:29:03] dist/assets/index-Bm7LY40t.css                          1,067.60 kB │ gzip:   151.02 kB
+[2026-06-10 20:29:03] dist/assets/purify.es-BwoZCkIS.js                          22.03 kB │ gzip:     8.77 kB
+[2026-06-10 20:29:03] dist/assets/index.es-4bUnsKr5.js                          149.67 kB │ gzip:    51.04 kB
+[2026-06-10 20:29:03] dist/assets/html2canvas.esm-CBrSDip1.js                   201.42 kB │ gzip:    48.03 kB
+[2026-06-10 20:29:03] dist/assets/index-DrGKiCvM.js                           3,811.30 kB │ gzip: 1,066.56 kB
+
+[2026-06-10 20:29:03] (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-06-10 20:29:03] - Using dynamic import() to code-split the application
+[2026-06-10 20:29:03] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[2026-06-10 20:29:03] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-06-10 20:29:03] ✓ built in 16.63s
+
+[2026-06-10 20:29:04] --- [EXITO] Paso 1 completado. Continuando... ---
+
+[2026-06-10 20:29:04] --- [Paso 2/2] Ejecutando: Comando final ---
+[2026-06-10 20:29:07]  INFO  Accepting connections at http://localhost:8080

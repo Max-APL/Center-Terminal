@@ -56,3 +56,81 @@
 
 
 [2026-06-06 23:38:18] --- Proceso terminado con código de salida: 1 ---
+[2026-06-10 17:32:29] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 17:32:29] Pre-comando: .\.venv\Scripts\Activate.ps1
+[2026-06-10 17:32:29] Comando principal: uvicorn app.main:app --host 0.0.0.0 --port 8000
+[2026-06-10 17:32:29] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-10 17:32:29] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 17:32:29] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 17:36:04] --- Servicio detenido por el usuario ---
+[2026-06-10 17:38:48] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 17:38:48] Pre-comando: .\.venv\Scripts\Activate.ps1
+[2026-06-10 17:38:48] Comando principal: uvicorn app.main:app --host 0.0.0.0 --port 8000
+[2026-06-10 17:38:48] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-10 17:38:48] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 17:38:48] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:06:27] --- Servicio detenido por el usuario ---
+[2026-06-10 18:06:57] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:06:57] Pre-comando: .\.venv\Scripts\Activate.ps1
+[2026-06-10 18:06:57] Comando principal: uvicorn app.main:app --host 0.0.0.0 --port 8000
+[2026-06-10 18:06:57] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-10 18:06:57] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:06:57] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:07:14] --- Servicio detenido por el usuario ---
+[2026-06-10 18:07:16] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:07:16] Pre-comando: .\.venv\Scripts\Activate.ps1
+[2026-06-10 18:07:16] Comando principal: uvicorn app.main:app --host 0.0.0.0 --port 8000
+[2026-06-10 18:07:16] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-10 18:07:16] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:07:16] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:07:31] --- Servicio detenido por el usuario ---
+[2026-06-10 18:07:36] --- Ejecutando en terminal nativa embebida (PowerShell 7) ---
+[2026-06-10 18:07:36] Pre-comando: .\.venv\Scripts\Activate.ps1
+[2026-06-10 18:07:36] Comando principal: uvicorn app.main:app --host 0.0.0.0 --port 8000
+[2026-06-10 18:07:36] Directorio: C:\Users\maxpa\Desktop\Max-Pasten\PastenPlast\Inventario-PastenPlast\backend_pastenplast
+
+[2026-06-10 18:07:36] El proceso se esta ejecutando como terminal normal dentro del workspace.
+[2026-06-10 18:07:36] Al detener el servicio desde Central Terminal, la consola se cerrara automaticamente.
+
+[2026-06-10 18:10:05] --- Servicio detenido por el usuario ---
+[2026-06-10 19:36:15] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-10 19:36:16] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 19:36:18] 2026-06-10 19:36:18,729 - INFO - \u2705 Pool de conexiones 'mypool' creado con tamaño 32
+[2026-06-10 19:36:20] INFO:     Started server process [21424]
+[2026-06-10 19:36:20] INFO:     Waiting for application startup.
+[2026-06-10 19:36:20] INFO:     Application startup complete.
+[2026-06-10 19:36:20] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+[2026-06-10 19:37:47] --- Servicio detenido por el usuario ---
+[2026-06-10 19:37:57] --- [Paso 1/2] Ejecutando pre-comando: .\.venv\Scripts\Activate.ps1 ---
+
+[2026-06-10 19:37:57] --- [EXITO] Pre-comando completado. Iniciando comando principal... ---
+
+[2026-06-10 19:37:59] 2026-06-10 19:37:59,703 - INFO - \u2705 Pool de conexiones 'mypool' creado con tamaño 32
+[2026-06-10 19:38:01] INFO:     Started server process [25952]
+[2026-06-10 19:38:01] INFO:     Waiting for application startup.
+[2026-06-10 19:38:01] INFO:     Application startup complete.
+[2026-06-10 19:38:01] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+[2026-06-10 20:18:15] --- Servicio detenido por el usuario ---
+[2026-06-10 20:28:44] --- Ejecutando flujo 'Quick Deploy' (PowerShell 7) ---
+[2026-06-10 20:28:45] --- [Paso 1/2] Ejecutando: Paso 1 ---
+
+[2026-06-10 20:28:45] --- [EXITO] Paso 1 completado. Continuando... ---
+
+[2026-06-10 20:28:45] --- [Paso 2/2] Ejecutando: Comando final ---
+[2026-06-10 20:28:47] 2026-06-10 20:28:47,750 - INFO - \u2705 Pool de conexiones 'mypool' creado con tamaño 32
+[2026-06-10 20:28:49] INFO:     Started server process [28372]
+[2026-06-10 20:28:49] INFO:     Waiting for application startup.
+[2026-06-10 20:28:49] INFO:     Application startup complete.
+[2026-06-10 20:28:49] INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)

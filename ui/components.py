@@ -1,5 +1,27 @@
+import os
+import sys
 import tkinter as tk
 import customtkinter as ctk
+
+
+def resource_path(relative_path):
+    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    return os.path.join(base_path, relative_path)
+
+
+def asset_path(*parts):
+    return resource_path(os.path.join("assets", *parts))
+
+
+def apply_app_icon(window):
+    icon_path = asset_path("central_terminal.ico")
+    if not os.path.exists(icon_path):
+        return
+
+    try:
+        window.iconbitmap(icon_path)
+    except Exception:
+        pass
 
 class ToolTip:
     def __init__(self, widget, text):
